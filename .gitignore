@@ -1,3 +1,4 @@
+
 *.iml
 .gradle
 /local.properties
@@ -12,5 +13,7 @@
 /captures
 .externalNativeBuild
 .cxx
-local.properties
-.idea/vcs.xml
+
+# Configurações locais do Android Studio
+.idea/
+.kotlin/

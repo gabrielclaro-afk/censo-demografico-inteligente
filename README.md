@@ -11,10 +11,10 @@ Aplicativo Android que mostra os **nomes e sobrenomes mais frequentes do Brasil*
 ## O que o app faz
 
 1. Ao abrir, carrega a lista de estados do IBGE.
-2. O usuário escolhe um **estado** e vê o ranking de nomes daquele estado: o **1º lugar em destaque** e os seguintes em **barras** proporcionais à frequência.
+2. O usuário escolhe um **estado** e vê o ranking de nomes daquele estado: o **1º lugar em destaque** e do 2º ao 10º em **barras** proporcionais ao 1º.
 3. As abas **Mulheres**, **Homens** e **Sobrenomes** alternam entre os três rankings.
-4. Com a **busca**, o usuário escolhe um **município** do estado e o ranking passa a ser só daquela cidade.
-5. O botão **"Ver estado inteiro"** volta para o ranking do estado.
+4. Com a **busca** (que ignora acentos: "tres coracoes" acha "Três Corações"), o usuário escolhe um **município** do estado e o ranking passa a ser só daquela cidade.
+5. O link **"Ver ⟨estado⟩ inteiro"** (ex.: "Ver Minas Gerais inteiro") volta para o ranking do estado.
 6. Sem internet, ou se o IBGE responder com erro, aparece um **cartão de erro** com uma mensagem clara e o botão **"Tentar novamente"**.
 
 ## APIs do IBGE utilizadas
@@ -44,11 +44,16 @@ app/src/main/java/br/com/censodemografico/
 │   ├── IbgeRepository.kt    Ponto único de acesso aos dados para o ViewModel
 │   └── MensagemDeErro.kt    Converte falhas de rede/HTTP/JSON em mensagens em português
 ├── ui/           Interface em Jetpack Compose + ViewModel
-│   ├── CensoScreen.kt       Tela (recebe o estado e devolve os eventos do usuário)
-│   ├── CensoViewModel.kt    Guarda o estado da tela e chama o repositório
-│   ├── CensoUiState.kt      Tudo o que a tela precisa para se desenhar
-│   ├── DadosFalsos.kt       Dados de exemplo usados pelos @Preview
-│   └── theme/               Cores, tipografia e tema
+│   ├── CensoScreen.kt         Tela principal (recebe o estado e devolve os eventos do usuário)
+│   ├── CensoViewModel.kt      Guarda o estado da tela e chama o repositório
+│   ├── CensoUiState.kt        Tudo o que a tela precisa para se desenhar
+│   ├── SeletorLocalidade.kt   Seletores de estado e município, com a folha de busca
+│   ├── Ranking.kt             Abas, cartão do 1º lugar e lista com barras
+│   ├── Estados.kt             Boas-vindas, carregamento, cabeçalho e cartão de erro
+│   ├── Marca.kt               Barra superior com a marca e o selo "Censo 2022"
+│   ├── Formatacao.kt          Formatação de nomes e números e busca sem acento
+│   ├── DadosFalsos.kt         Dados de exemplo usados pelos @Preview
+│   └── theme/                 Cores, tipografia e tema (claro e escuro)
 └── MainActivity.kt   Liga o CensoViewModel à CensoScreen
 ```
 
@@ -87,3 +92,13 @@ Para rodar os testes unitários:
 ./gradlew test        # Linux/macOS
 gradlew.bat test      # Windows
 ```
+
+## Prints
+
+| Tela inicial | Resultado do estado | Município | Erro sem internet |
+|:---:|:---:|:---:|:---:|
+| <img src="docs/prints/tela-inicial.png" width="200"> | <img src="docs/prints/resultado.png" width="200"> | <img src="docs/prints/municipio.png" width="200"> | <img src="docs/prints/erro.png" width="200"> |
+
+## Vídeo de demonstração
+
+[Assista no YouTube](<LINK-DO-VÍDEO>)

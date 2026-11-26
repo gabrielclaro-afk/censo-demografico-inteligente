@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Configurações locais do Android Studio e cache do Kotlin (não versionar)
+.idea/
+.kotlin/

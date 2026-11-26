@@ -78,7 +78,7 @@ Detalhes da implementação:
 
 1. Clone o repositório:
    ```bash
-   git clone <URL-DO-REPOSITÓRIO>
+   git clone <https://github.com/gabrielclaro-afk/censo-demografico-inteligente.git>
    ```
 2. Abra a pasta do projeto no **Android Studio** (versão recente) e espere o **Gradle Sync** terminar.
 3. Crie ou escolha um emulador em **Device Manager** (API 24 ou superior).
@@ -92,13 +92,3 @@ Para rodar os testes unitários:
 ./gradlew test        # Linux/macOS
 gradlew.bat test      # Windows
 ```
-
-## Prints
-
-| Tela inicial | Resultado do estado | Município | Erro sem internet |
-|:---:|:---:|:---:|:---:|
-| <img src="docs/prints/tela-inicial.png" width="200"> | <img src="docs/prints/resultado.png" width="200"> | <img src="docs/prints/municipio.png" width="200"> | <img src="docs/prints/erro.png" width="200"> |
-
-## Vídeo de demonstração
-
-[Assista no YouTube](<LINK-DO-VÍDEO>)

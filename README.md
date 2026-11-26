@@ -87,9 +87,3 @@ Para rodar os testes unitários:
 ./gradlew test        # Linux/macOS
 gradlew.bat test      # Windows
 ```
-
-## Prints
-
-| Tela inicial | Resultado do estado | Município | Erro sem internet |
-|:---:|:---:|:---:|:---:|
-| <img src="docs/prints/tela-inicial.png" width="200"> | <img src="docs/prints/resultado.png" width="200"> | <img src="docs/prints/municipio.png" width="200"> | <img src="docs/prints/erro.png" width="200"> |
